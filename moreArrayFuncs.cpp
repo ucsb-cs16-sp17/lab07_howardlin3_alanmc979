@@ -10,7 +10,13 @@
 
 int indexOfMax(int *a, int size) {
   assert(size >= 1);
-  return -42; // STUB !!! Remove and replace with correct code
+  int Lindex=0;
+    for(int i=0; i<size;i++){
+      if(a[Lindex]<a[i]){
+	  Lindex=i;
+	}
+     }
+   return Lindex;
 }
 
 // a: an array of ints.  size is how many ints in array
@@ -21,7 +27,13 @@ int indexOfMax(int *a, int size) {
 // You may assume size >= 1
 int indexOfMin(int *a, int size) {
   assert(size >= 1);
-  return -42; // STUB !!! Remove and replace with correct code
+  int Sindex=0;
+  for( int i=0; i<size;i++){
+    if(a[Sindex]>a[i]){
+	Sindex=i;
+	}
+      }
+   return Sindex;
 }
 
 // a: an array of ints.  size is how many ints in array
@@ -30,7 +42,13 @@ int indexOfMin(int *a, int size) {
 // You may assume size >= 1
 int largestValue(int *a, int size) {
   assert(size >= 1);
-  return -42; // STUB !!! Remove and replace with correct code
+  int lVal=a[0];
+  for( int i=0; i<size;i++){
+    if(lVal<a[i]){
+	lVal=a[i];
+	}
+      }
+   return lVal;
 }
 
 // a: an array of ints.  size is how many ints in array
@@ -40,7 +58,13 @@ int largestValue(int *a, int size) {
 
 int smallestValue(int *a, int size) {
   assert(size >= 1);
-  return -42; // STUB !!! Remove and replace with correct code
+  int sVal=a[0];
+  for( int i=0; i<size;i++){
+    if(sVal>a[i]){
+	sVal=a[i];
+	}
+      }
+   return sVal;
 }
 
 
@@ -49,7 +73,11 @@ int smallestValue(int *a, int size) {
 // size may be 0 in this case, or non-zero.
 
 int sum(int *a, int size) {
-  return -42; // STUB
+  int sum=0;
+  for(int i=0; i<size;i++){
+    sum+=a[i];
+  }
+  return sum;
 }
 
 
@@ -60,7 +88,9 @@ int sum(int *a, int size) {
 // copy n elements from src to dest.
 
 void copyElements(int *dest, int *src, int n) {
-  // STUB: Fix this
+  for( int i=0; i<n; i++){
+    dest[i]=src[i];
+  }
 }
 
 // dest is an array of int that has capacity at LEAST of size n
@@ -71,7 +101,14 @@ void copyElements(int *dest, int *src, int n) {
 // return the number of elements that were copied
 
 int copyOddOnly(int *dest, int *src, int n) {
-  return -42; // stub @@@ FIX THIS 
+  int numCopies=0;
+  for(int i=0;i<n;i++){
+    if(!(src[i]%2==0)){
+      dest[i]=src[i];
+      numCopies++;
+    }
+  }
+  return numCopies;
 }
 
 // a, b and product are all arrays of size n (or greater)
@@ -86,6 +123,7 @@ int copyOddOnly(int *dest, int *src, int n) {
 // product will be {3,10,21,36}.
 
 void multiplyPairwise(int *a, int *b, int *product, int n) {
-  // STUB; fix this
+  for( int i=0;i<n;i++){
+    product[i]=a[i]*b[i];
+  }
 }
-

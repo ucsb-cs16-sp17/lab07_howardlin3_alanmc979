@@ -161,15 +161,28 @@ int sum(LinkedList * list) {
 ////location in the list, so that the new list also contains nodes in sorted
 ////(ascending) order. The list may have multiple copies of the same element
 
-void insertNodeToSortedList(LinkedList *list, int value);
-  Node *p;
-  Node *val= new Node;
+void insertNodeToSortedList(LinkedList *list, int value){
+  Node * val= new Node;
   val->data=value;
-  p = list->head;
-  while(p != NULL){
-    if(p->data >value){
-      p->next=val->data;
+  val->next=NULL;
+  Node *p;
+  p=list->head;
+  if (list==NULL){
+    Node *q= new Node;
+    q=list->head;
+    return;
     }
-    p = p->next;
+  else if(p->data >= value){
+    val->next=p->next;
+    p=val;
   }
+  else{
+    while(p && p->data<value){
+      p=p->next;
+    }
+    val->next=p->next;
+    p->next=val->next;
+    p=val;
+  } 
 
+}

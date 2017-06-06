@@ -21,10 +21,40 @@ using namespace std;
 		linkedListToString(list),
 		"list after adding 57");
 
-  insertNodeToSortedList(list,57);
-  assertEquals( "[42]->[48]->[57]->[57]->[61]->null", 
+  insertNodeToSortedList(list,47);
+  assertEquals( "[42]->[47]->[48]->[57]->[61]->null", 
 		linkedListToString(list),
-		"list after adding 57");
+		"list after adding 47"); 
+  insertNodeToSortedList(list,57);
+  assertEquals( "[42]->[47]->[48]->[57]->[57]->[61]->null",
+                linkedListToString(list),
+                "list after adding 57");
+  insertNodeToSortedList(list,40);
+  assertEquals( "[40]->[42]->[47]->[48]->[57]->[57]->[61]->null",
+                linkedListToString(list),
+                "list after adding 40");
+  insertNodeToSortedList(list,75);
+  assertEquals( "[40]->[42]->[47]->[48]->[57]->[57]->[61]->[75]->null",
+                linkedListToString(list),
+                "list after adding 75");
+  insertNodeToSortedList(list,85);
+  assertEquals( "[40]->[42]->[47]->[48]->[57]->[57]->[61]->[75]->[85]->null",
+                linkedListToString(list),
+                "list after adding 85");
+  insertNodeToSortedList(list,58);
+  assertEquals( "[40]->[42]->[47]->[48]->[57]->[57]->[58]->[61]->[75]->[85]->null",
+                linkedListToString(list),
+                "list after adding 58");
+  insertNodeToSortedList(list,-2);
+  assertEquals( "[-2]->[40]->[42]->[47]->[48]->[57]->[57]->[58]->[61]->[75]->[85]->null",
+                linkedListToString(list),
+                "list after adding -2");
+
+  insertNodeToSortedList(list,-2);
+  assertEquals( "[-2]->[-2]->[40]->[42]->[47]->[48]->[57]->[57]->[58]->[61]->[75]->[85]->null",
+                linkedListToString(list),
+                "list after adding -2");  
+
   
   freeLinkedList(list);
   
@@ -33,9 +63,7 @@ using namespace std;
 
   assertTrue(list->head == NULL,"list->head == NULL");
   assertTrue(list->tail == NULL,"list->tail == NULL)");
-  assertEquals( "null", 
-		linkedListToString(emptyList),
-		"linkedListToString(emptyList)");
+  assertEquals( "null", linkedListToString(emptyList),"linkedListToString(emptyList)");
 
   addIntToEndOfList(list,7);
 

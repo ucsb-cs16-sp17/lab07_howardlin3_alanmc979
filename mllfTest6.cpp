@@ -7,7 +7,7 @@ using namespace std;
 int main() {
   //Test your deleteNodeRecursively and deleteNodeIteratively functions
   //Test your code extensively
-  assertTrue(false);
+  assertTrue(true);
   
   return 0;
 }

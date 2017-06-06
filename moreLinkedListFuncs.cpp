@@ -169,11 +169,9 @@ void insertNodeToSortedList(LinkedList *list, int value){
   p=list->head;
   q=list->tail;
   if (list==NULL){
-    Node *q= new Node;
-    q=list->head;
     return;
     }
-  else if(p->data > value){
+  else if(list->head==NULL || p->data>=value){
     addIntToStartOfList(list, value);
     }
   else if(q->data < value){
@@ -181,28 +179,13 @@ void insertNodeToSortedList(LinkedList *list, int value){
     }
   else{
     while(p != NULL){
-      p = p->next; 
-      if(p->data<value){
-        val->next=p->next;
-        p->next=val;
-        return;
+        if(p->data<value && p->next->data>=value){
+          val->next=p->next;
+          p->next=val;
+          return;
         }
-      }
-  }
+     p=p->next; 
+     }
 
-
-
-//  else if(p->data >= value){
-//    val->next=p->next;
-//    p=val;
-//  }
-//  else{
-//    while(p && p->data<value){
-//      p=p->next;
-//    }
-//    val->next=p->next;
-//    p=val;
-//    p->next=val->next;
-//  } 
-
+   } 
 }

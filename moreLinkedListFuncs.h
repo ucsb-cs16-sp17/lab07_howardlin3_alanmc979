@@ -44,4 +44,5 @@ int smallestValue(LinkedList *list);
 
 int sum(LinkedList * list);
 
+void insertNodeToSortedList(LinkedList *list, int value);
 #endif

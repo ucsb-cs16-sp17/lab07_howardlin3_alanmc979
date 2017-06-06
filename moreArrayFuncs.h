@@ -92,5 +92,6 @@ void multiplyPairwise(int *a, int *b, int *product, int n);
 ////Postcondition: Insert a node with the given value at the appropriate
 ////location in the list, so that the new list also contains nodes in sorted
 ////(ascending) order. The list may have multiple copies of the same element
-void insertNodeToSortedList(LinkedList *list, int value);
+
+//void insertNodeToSortedList(LinkedList *list, int value);
 #endif

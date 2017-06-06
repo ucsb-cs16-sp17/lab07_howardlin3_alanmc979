@@ -9,22 +9,22 @@ using namespace std;
   //Test your code extensively
   int main() {
 
-  int fiveNums[3]={42,57,61};
+  int fiveNums[3]={42,48,61};
 
   LinkedList *list = arrayToLinkedList(fiveNums,3);
-  assertEquals( "[42]->[57]->[61]->null", 
+  assertEquals( "[42]->[48]->[61]->null", 
 		linkedListToString(list),
 		"linkedListToString(list)");
 
-  insertNodeToSortedList(list,25);
-  assertEquals( "[25]->[42]->[57]->[61]->null", 
+  insertNodeToSortedList(list,57);
+  assertEquals( "[42]->[48]->[57]->[61]->null", 
 		linkedListToString(list),
-		"list after adding 25");
+		"list after adding 57");
 
-  insertNodeToSortedList(list,31);
-  assertEquals( "[25]->[31]->[42]->[57]->[61]->null", 
+  insertNodeToSortedList(list,57);
+  assertEquals( "[42]->[48]->[57]->[57]->[61]->null", 
 		linkedListToString(list),
-		"list after adding 31");
+		"list after adding 57");
   
   freeLinkedList(list);
   
